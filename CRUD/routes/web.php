@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello', function () {
+    return view('hello');
+});
+
+Route::get('/form', function () {
+    return view('form');
+});
+
+Route::post('/register', "UserControl@register");
+
+Route::get('/all', "UserControl@all");
+
+Route::get('/user/{id}', "UserControl@find");
