@@ -28,3 +28,7 @@ Route::post('/register', "UserControl@register");
 Route::get('/all', "UserControl@all");
 
 Route::get('/user/{id}', "UserControl@find");
+
+Route::get('/user/{id}/edit', "UserControl@edit");
+
+Route::get('/user/{id}/delete', "UserControl@destroy");

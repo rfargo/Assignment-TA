@@ -48,5 +48,16 @@ class UserControl extends Controller
 		return $users;
 	}
 
+	public function edit($id){
+
+	}
+
+	public function destroy($id){
+		$users = $this->users->find($id);
+		$users->delete();
+
+//		 return redirect('/hello')->with('success', 'Ticket has been deleted!!');
+		 return redirect('/hello');
+	}
 
 }
