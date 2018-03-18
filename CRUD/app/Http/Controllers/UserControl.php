@@ -49,9 +49,25 @@ class UserControl extends Controller
 	}
 
 	public function edit($id){
+		$users = $this->users->find($id);
 
+		return view('/edit', ['users'=>$users]);
 	}
 
+	public function update(Request $request, $id){
+		$users = [
+			"name" => $request->name,
+			"email" => $request->email,
+			"password" => md5($request->password)
+		];
+
+		$this->users->where('id', $id)->update($users);
+
+		return('Updated');
+	// return $id;
+
+	}
+	
 	public function destroy($id){
 		$users = $this->users->find($id);
 		$users->delete();

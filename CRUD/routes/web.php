@@ -31,4 +31,6 @@ Route::get('/user/{id}', "UserControl@find");
 
 Route::get('/user/{id}/edit', "UserControl@edit");
 
+Route::post('/user/update/{id}', "UserControl@update");
+
 Route::get('/user/{id}/delete', "UserControl@destroy");
